@@ -1,0 +1,24 @@
+class solution {
+  public:
+    long long multiplyTwoLists(Node *first, Node *second) {
+        // Define the modulo constant
+        const long long MOD = 1000000007;
+
+        // Convert the first linked list to its number representation
+        long long num1 = 0;
+        while (first != NULL) {
+            num1 = (num1 * 10 + first->data) % MOD;
+            first = first->next;
+        }
+
+        // Convert the second linked list to its number representation
+        long long num2 = 0;
+        while (second != NULL) {
+            num2 = (num2 * 10 + second->data) % MOD;
+            second = second->next;
+        }
+
+        // Return the product of the two numbers modulo MOD
+        return (num1 * num2) % MOD;
+    }
+};
